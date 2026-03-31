@@ -1,0 +1,270 @@
+/* ── cases.module.css ── */
+/* Styles for the /cases listing page. Global classNames (cases-main, case-card, etc.)
+   are kept on elements for responsive overrides in globals.css. */
+
+/* Full-height page wrapper */
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+/* Main content — centered with horizontal padding */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* Page header section — border separates it from filters */
+.pageHeader {
+  border-bottom: 1px solid var(--ink);
+  padding: 40px 0 24px;
+  margin-bottom: 32px;
+}
+
+/* Eyebrow label above the page title */
+.pageSection {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+
+/* Main page heading */
+.pageTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+/* Subtitle — case count and update cadence */
+.pageSubtitle {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  color: var(--mid);
+}
+
+/* Filter controls row — flex container for search + dropdowns */
+.filterBar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Search input — shared base with selects, grows to fill space */
+.searchInput {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  height: 44px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: text;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  min-width: 200px;
+  outline: none;
+}
+
+/* Dropdown filter selects — custom appearance, right padding for chevron */
+.select {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  height: 44px;
+  padding: 0 28px 0 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none;
+  min-width: 140px;
+  outline: none;
+}
+
+/* Reset filter button */
+.resetBtn {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  height: 44px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid var(--mid);
+  color: var(--mid);
+  cursor: pointer;
+  outline: none;
+}
+
+/* "Menampilkan X dari Y kasus" count line */
+.resultsCount {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+/* Empty state message when no results match filters */
+.emptyState {
+  padding: 64px 0;
+  text-align: center;
+  color: var(--mid);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* Link wrapper around each card — strips link decoration */
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Case card article — two-column grid with hover accent on right border */
+.card {
+  border-bottom: 2px solid var(--rule);
+  border-right: 3px solid var(--rule);
+  padding: 24px 20px 24px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-right-color 0.15s;
+}
+
+.card:hover {
+  border-right-color: var(--ink);
+}
+
+/* Meta row — case ID, urgency badge, actor chip */
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+/* Case ID monospace label */
+.caseId {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+}
+
+/* Actor chip — small uppercase tag */
+.actorBadge {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--paper-dark);
+  border: 1px solid var(--rule);
+  padding: 2px 8px;
+}
+
+/* Case title */
+.cardTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+/* Truncated description — 2-line clamp */
+.cardDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer meta row — date, location, category, CTA */
+.cardFooter {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Monospace meta spans in the footer (date, location, category) */
+.cardMono {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--mid);
+}
+
+/* "Buka Kasus →" right-aligned call to action */
+.cardCta {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--ink);
+  margin-left: auto;
+  letter-spacing: 0.04em;
+}
+
+/* Right column — verification status + handling status */
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 100px;
+}
+
+/* Handling status text in right column */
+.cardStatus {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 12px;
+  color: var(--mid);
+  text-align: right;
+}
+
+/* Verification status labels — three colour variants */
+.verifiedYa {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.verifiedProses {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.verifiedBelum {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

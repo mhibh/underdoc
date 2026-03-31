@@ -1,0 +1,438 @@
+/* ── about.module.css ── */
+/* Styles for the /about page. The page follows the same editorial design
+   language as /cases and the homepage: mono labels, Playfair headings,
+   measured borders, and a manifesto-style CTA. */
+
+/* ── PAGE SHELL ──────────────────────────────────────────
+   Main page wrapper and centered content column. The
+   global class "cases-main" is preserved on the main
+   element for existing responsive behavior in globals.css.
+── ───────────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+
+/* ── HEADER SECTION ──────────────────────────────────────
+   Introductory manifesto block with a mono kicker,
+   large editorial headline, and supporting copy.
+── ───────────────────────────────────────────────────── */
+
+.heroSection {
+  padding: 44px 0 40px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.heroKicker {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+.heroTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(34px, 6vw, 66px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  max-width: 760px;
+  margin: 0 0 18px;
+}
+
+.heroSubtitle {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 760px;
+  margin: 0;
+}
+
+
+/* ── SHARED SECTION TOKENS ───────────────────────────────
+   Reusable title, eyebrow, and label styles shared across
+   the editorial sections below.
+── ───────────────────────────────────────────────────── */
+
+.sectionLabel,
+.sectionEyebrow {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.sectionHeader {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 8px 0 0;
+}
+
+
+/* ── KEBERADAAN KAMI ─────────────────────────────────────
+   Two-column explanation section with a narrow left label
+   column and a wider body copy column.
+── ───────────────────────────────────────────────────── */
+
+.reasonSection {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.reasonGrid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.reasonBody {
+  max-width: 720px;
+}
+
+.reasonBody p {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--mid);
+  margin: 0 0 18px;
+}
+
+.reasonBody p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ── METODOLOGI VERIFIKASI ───────────────────────────────
+   Four-step process cards arranged horizontally on wider
+   screens and collapsed into a single column on mobile.
+── ───────────────────────────────────────────────────── */
+
+.methodSection {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.stepCard {
+  padding: 22px 22px 26px;
+  border-right: 1px solid var(--rule);
+  min-height: 220px;
+}
+
+.stepCard:last-child {
+  border-right: none;
+}
+
+.stepMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.stepNumber {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.stepText {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--mid);
+  margin: 0;
+}
+
+
+/* ── PRINSIP KERJA ───────────────────────────────────────
+   Four principle cards in a 2x2 grid on desktop and a
+   single column stack on mobile.
+── ───────────────────────────────────────────────────── */
+
+.principlesSection {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.principleCard {
+  padding: 24px;
+  border: 1px solid var(--rule);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(0, 0, 0, 0));
+}
+
+.principleTitle {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.principleText {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--mid);
+  margin: 0;
+}
+
+
+/* ── RUANG LINGKUP PEMANTAUAN ────────────────────────────
+   Two-column list of monitored categories, each with a
+   small line icon, strong title, and one-line summary.
+── ───────────────────────────────────────────────────── */
+
+.scopeSection {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.scopeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 28px;
+}
+
+.scopeItem {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.scopeIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--teal);
+}
+
+.scopeIcon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scopeTitle {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.scopeText {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--mid);
+  margin: 0;
+}
+
+
+/* ── CLOSING CTA ─────────────────────────────────────────
+   Teal manifesto block that echoes the homepage closing
+   section, with a large pull quote and dual CTAs.
+── ───────────────────────────────────────────────────── */
+
+.ctaSection {
+  position: relative;
+  margin-top: 40px;
+  background: var(--teal);
+  color: white;
+  overflow: hidden;
+}
+
+.ctaDecor {
+  position: absolute;
+  top: -56px;
+  left: 20px;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 220px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 1;
+  padding: 56px 40px 44px;
+}
+
+.ctaQuote {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(28px, 4.4vw, 50px);
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 780px;
+  margin: 0 0 28px;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 20px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.ctaPrimary {
+  background: white;
+  color: var(--teal);
+  border: 1px solid white;
+}
+
+.ctaPrimary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: white;
+}
+
+
+/* ── RESPONSIVE ADJUSTMENTS ──────────────────────────────
+   Tablet and mobile layout changes for section grids,
+   spacing, and CTA proportions.
+── ───────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .reasonGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stepCard:nth-child(2) {
+    border-right: none;
+  }
+
+  .stepCard:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .scopeGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .main {
+    padding: 0 20px 56px;
+  }
+
+  .heroSection,
+  .reasonSection,
+  .methodSection,
+  .principlesSection,
+  .scopeSection {
+    padding: 32px 0;
+  }
+
+  .heroSubtitle,
+  .reasonBody p,
+  .stepText,
+  .principleText,
+  .scopeText {
+    font-size: 14px;
+  }
+
+  .stepsGrid,
+  .principlesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepCard {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stepCard:last-child {
+    border-bottom: none;
+  }
+
+  .ctaInner {
+    padding: 44px 24px 32px;
+  }
+
+  .ctaDecor {
+    left: 8px;
+    top: -28px;
+    font-size: 140px;
+  }
+}

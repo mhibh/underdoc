@@ -1,0 +1,210 @@
+/* ── case-detail.module.css ── */
+/* Styles for the /cases/[id] detail page. Global classNames (detail-main, detail-grid)
+   are preserved on elements for responsive overrides in globals.css. */
+
+/* Full-height page wrapper */
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+/* Main content — centered narrow column */
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* Breadcrumb padding wrapper */
+.breadcrumb {
+  padding: 24px 0 0;
+}
+
+/* "← Kembali ke Daftar Kasus" back link */
+.breadcrumbLink {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+/* Case header — contains meta, title, date/location */
+.header {
+  border-bottom: 2px solid var(--ink);
+  padding: 24px 0;
+  margin-bottom: 40px;
+}
+
+/* Meta row — case ID, urgency badge, actor chip */
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* Case ID monospace label */
+.caseId {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+}
+
+/* Actor chip — bordered tag */
+.actorTag {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  color: var(--mid);
+  border: 1px solid var(--rule);
+  padding: 2px 8px;
+}
+
+/* Case title heading */
+.title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* Date and location flex row */
+.headerDates {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Individual date or location span */
+.headerDate {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  color: var(--mid);
+}
+
+/* Two-column grid: main content + sidebar */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+}
+
+/* "Kronologi & Keterangan" section heading */
+.sectionLabel {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+
+/* Case narrative / keterangan */
+.narrative {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+/* Tags section wrapper — top margin */
+.tagsSection {
+  margin-top: 32px;
+}
+
+/* Tags flex row */
+.tagList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Individual tag chip */
+.tag {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  border: 1px solid var(--rule);
+  padding: 3px 10px;
+  color: var(--mid);
+}
+
+/* Sources section — separated by top border */
+.sourcesSection {
+  margin-top: 32px;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+
+/* Sources flex column */
+.sourceList {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Individual source link */
+.sourceLink {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* Sidebar inner card — bordered box with stacked metadata rows */
+.sidebar {
+  border: 1px solid var(--rule);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sidebar field label — small uppercase mono */
+.metaLabel {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 4px;
+}
+
+/* Sidebar field value */
+.metaValue {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+/* Sidebar row with top border separator */
+.metaRow {
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+}
+
+/* Verification status colour variants */
+.verifiedYa {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.verifiedProses {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.verifiedBelum {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  color: var(--mid);
+  font-weight: 500;
+}

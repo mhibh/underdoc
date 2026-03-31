@@ -1,0 +1,123 @@
+/* ── Navbar.module.css ── */
+/* Desktop top navigation bar. Hidden on mobile via globals.css (.top-nav). */
+
+/* Base nav container — paper background with bottom border */
+.nav {
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+  top: 0;
+  z-index: 200;
+}
+
+/* Applied when on sub-pages (cases, violations, about, submit) */
+.navSticky {
+  position: sticky;
+}
+
+/* Inner flex wrapper — max-width container */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 0;
+}
+
+/* UNDERDOC wordmark link */
+.logo {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-right: 1px solid var(--rule);
+  padding-right: 24px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+/* Horizontal nav link list */
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual nav link — uppercase mono style with hover state */
+.navLink {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--rule);
+  transition: color 0.2s, background 0.2s;
+}
+
+.navLink:hover {
+  color: var(--ink);
+  background: var(--paper-dark);
+}
+
+/* Right-side CTA button group */
+.ctaArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* "Laporkan" outlined button — red border, fills on hover */
+.reportBtn {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-decoration: none;
+  border: 1px solid var(--red);
+  padding: 7px 14px;
+  transition: all 0.2s;
+}
+
+.reportBtn:hover {
+  background: var(--red);
+  color: white;
+}
+
+/* "Akses Database" filled button — ink background, teal on hover */
+.dbBtn {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background 0.2s;
+}
+
+.dbBtn:hover {
+  background: var(--teal);
+}

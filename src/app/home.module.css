@@ -1,0 +1,891 @@
+/* ── TAG COMPONENT ────────────────────────────
+   Severity/status badge used on case cards and
+   the map legend. Variant classes override
+   background and text colour.
+── ────────────────────────────────────────── */
+
+.tagBase {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+}
+
+.tagCritical {
+  background: #fdecea;
+  color: var(--red);
+}
+
+.tagHigh {
+  background: #fff8e1;
+  color: var(--gold);
+}
+
+.tagOngoing {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+
+/* ── STAT NUMBER ──────────────────────────────
+   Animated count-up figure in the hero sidebar.
+   Dynamic color is applied via inline style.
+── ────────────────────────────────────────── */
+
+.statNum {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: block;
+  /* color is injected as inline style per item */
+}
+
+
+/* ── SECTION DIVIDER ──────────────────────────
+   Horizontal rule with a label on the left and
+   an optional "see all" link on the right.
+── ────────────────────────────────────────── */
+
+.divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 12px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dividerTitle {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  flex-shrink: 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.dividerLink {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+
+/* ── PAGE WRAPPER ─────────────────────────────
+   Outermost container. The global class
+   "home-wrapper" is kept for responsive rules
+   in globals.css.
+── ────────────────────────────────────────── */
+
+.pageWrapper {
+  min-height: 100vh;
+  background: var(--paper);
+  overflow-x: hidden;
+}
+
+
+/* ── HERO ─────────────────────────────────────
+   Full-width newspaper-style hero with a quote
+   on the left and live stats on the right.
+── ────────────────────────────────────────── */
+
+.heroSection {
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.heroLeft {
+  padding: 56px 48px 56px 0;
+  border-right: 1px solid var(--rule);
+}
+
+.heroKicker {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.kickerDash {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+}
+
+.heroQuote {
+  border-left: 3px solid var(--rule);
+  padding-left: 24px;
+  margin-bottom: 28px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.quoteText {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(26px, 3.5vw, 48px);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+}
+
+.quoteFooter {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--mid);
+  text-align: left;
+}
+
+.quoteAuthor {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.heroDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mid);
+  max-width: 520px;
+  margin-bottom: 36px;
+  border-left: 3px solid var(--rule);
+  padding-left: 16px;
+}
+
+.heroCtaRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.heroCta {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  text-decoration: none;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.heroCta:hover {
+  background: var(--teal);
+}
+
+.heroCtaOutline {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 1px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.heroCtaOutline:hover {
+  background: var(--paper-dark);
+}
+
+
+/* ── HERO STATS ───────────────────────────────
+   Right sidebar of the hero: count-up numbers,
+   live indicator with pulsing dot.
+── ────────────────────────────────────────── */
+
+.heroStatsSidebar {
+  padding: 40px 0 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.statsLabel {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+
+.statItem {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.statItemFirst {
+  border-top: 1px solid var(--rule);
+}
+
+.statNumLabel {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 12px;
+  color: var(--mid);
+  margin-top: 4px;
+}
+
+.statsLive {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #27ae60;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statsPulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27ae60;
+  display: inline-block;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+
+/* ── BREAKING BAR ─────────────────────────────
+   Thin strip below the hero showing the latest
+   headline alerts in a horizontal list.
+── ────────────────────────────────────────── */
+
+.breakingBar {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-dark);
+}
+
+.breakingInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: stretch;
+  min-height: 44px;
+}
+
+.breakingLabel {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: white;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.breakingItems {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 12px;
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.breakingItem {
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+  color: var(--mid);
+}
+
+.breakingItemAlert {
+  color: var(--red);
+}
+
+
+/* ── KASUS TERBARU ────────────────────────────
+   Three-column case card grid with a narrow
+   statistics sidebar on the right.
+── ────────────────────────────────────────── */
+
+.casesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 280px;
+  gap: 0;
+}
+
+.caseLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.caseCard {
+  padding: 24px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.caseCard:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.caseTagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.caseCat {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.caseTime {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--mid);
+  opacity: 0.6;
+  margin-left: auto;
+}
+
+.caseTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.caseExcerpt {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--mid);
+  flex: 1;
+}
+
+.caseMeta {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--mid);
+  letter-spacing: 0.04em;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caseSidebar {
+  padding: 0 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebarItem {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sidebarNum {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.sidebarNumAccent {
+  color: var(--teal);
+}
+
+.sidebarLabel {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 12px;
+  color: var(--mid);
+  margin-top: 2px;
+}
+
+.sidebarSub {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: var(--red);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+
+/* ── PETA INSIDEN ─────────────────────────────
+   Dark full-width map section: SVG outline of
+   Indonesia with positioned incident dots, plus
+   a sidebar ranking provinces by count.
+── ────────────────────────────────────────── */
+
+.mapSection {
+  background: var(--ink);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.mapInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 0;
+  min-height: 380px;
+}
+
+.mapLeft {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 40px 40px 0;
+}
+
+.mapRight {
+  padding: 40px 0 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapEyebrow {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+}
+
+.mapTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.mapDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+}
+
+.mapSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.incidentDot {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  /* left, top, width, height, background, box-shadow injected as inline style */
+}
+
+.mapLegend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.06em;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  /* background injected as inline style */
+}
+
+.regionEyebrow {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.regionRow {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.regionName {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.regionCount {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  width: 48px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.regionBarTrack {
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.regionBarFill {
+  height: 100%;
+  background: var(--teal);
+  /* width injected as inline style */
+}
+
+.regionBarFillTop {
+  background: var(--red);
+}
+
+.mapLinkWrap {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.mapLink {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.mapLink:hover {
+  background: white;
+  color: var(--ink);
+}
+
+
+/* ── POLA TERIDENTIFIKASI ─────────────────────
+   Six-column grid of identified violation
+   patterns with count totals.
+── ────────────────────────────────────────── */
+
+.polaGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px 48px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.polaLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.polaCell {
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.polaCell:hover {
+  background: var(--paper-dark);
+}
+
+.polaCellBordered {
+  border-right: 1px solid var(--rule);
+}
+
+.polaName {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.polaCount {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+
+/* ── MANIFESTO ────────────────────────────────
+   Teal-background editorial section with a
+   large decorative quotation mark, manifesto
+   text, and two CTA buttons.
+── ────────────────────────────────────────── */
+
+.manifesto {
+  background: var(--teal);
+  padding: 64px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.manifestoDecor {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 400px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.04);
+  position: absolute;
+  top: -80px;
+  left: -20px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.manifestoInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.manifestoQuote {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+  line-height: 1.4;
+}
+
+.manifestoUnderline {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.manifestoBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.manifestoText {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.manifestoCtas {
+  display: flex;
+  gap: 12px;
+}
+
+.manifestoCtaPrimary {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+
+.manifestoCtaPrimary:hover {
+  background: var(--paper);
+}
+
+.manifestoCtaOutline {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+}
+
+.manifestoCtaOutline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+
+/* ── FOOTER ───────────────────────────────────
+   Four-column dark footer: brand blurb, three
+   nav columns, and a copyright strip.
+── ────────────────────────────────────────── */
+
+.footerEl {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 32px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footerBrandName {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footerBrandDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 200px;
+}
+
+.footerNavTitle {
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+}
+
+.footerNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerLink {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: white;
+}
+
+.footerCopyright {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+}

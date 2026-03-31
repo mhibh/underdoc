@@ -1,0 +1,28 @@
+/* ── TickerBar.module.css ── */
+/* Scrolling breaking-news ticker displayed above the Navbar. */
+
+/* Outer container — dark ink strip */
+.ticker {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 7px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scrolling text track — starts off-screen right, scrolls left continuously */
+.track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 40s linear infinite;
+  padding-left: 100%;
+}
+
+/* Keyframe: slide text from right to left */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

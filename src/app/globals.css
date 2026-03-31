@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Tokens ── */
+/* All CSS custom properties referenced throughout the app and CSS modules */
+:root {
+  --ink: #0f0f0e;
+  --paper: #f4f0e8;
+  --paper-dark: #ede8dc;
+  --red: #c0392b;
+  --teal: #1a6b6b;
+  --gold: #b8860b;
+  --mid: #6b6557;
+  --rule: #ccc5b5;
+}
+
+/* ── Base Styles ── */
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Select Wrapper ── */
+/* Adds a custom chevron arrow to native <select> elements.
+   Used in CasesPage filter dropdowns. */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  color: var(--mid);
+}
+
+/* ── Mobile (< 768px) ── */
+/* Responsive overrides. These target global classNames that must remain
+   on elements so these rules continue to apply. */
+@media (max-width: 767px) {
+  /* Nav: hide desktop top nav, show bottom nav instead */
+  .top-nav { display: none !important; }
+
+  /* Homepage wrapper: add bottom padding for the fixed bottom nav */
+  .home-wrapper { padding-bottom: 80px !important; }
+
+  /* Homepage: Hero — breaking news bar hidden on mobile */
+  .breaking-bar { display: none !important; }
+
+  /* Homepage: Hero grid collapses to single column */
+  .hero-grid { grid-template-columns: 1fr !important; padding: 0 20px !important; }
+  .hero-left { padding: 32px 0 24px !important; border-right: none !important; border-bottom: 1px solid var(--rule) !important; }
+  .hero-left h1 { font-size: 36px !important; line-height: 1.1 !important; }
+  .hero-left p  { font-size: 15px !important; line-height: 1.7 !important; }
+  /* Kundera quote hero: tighter left padding on mobile */
+  .hero-left blockquote { padding-left: 16px !important; }
+  .hero-ctas { flex-direction: column !important; gap: 12px !important; align-items: stretch !important; }
+  .hero-ctas a { display: flex !important; align-items: center !important; justify-content: flex-start !important; min-height: 48px !important; text-align: left !important; box-sizing: border-box !important; padding-left: 20px !important; }
+
+  /* Homepage: Stats sidebar becomes a 2×2 grid */
+  .hero-stats { display: grid !important; grid-template-columns: 1fr 1fr !important; padding: 16px 0 20px !important; gap: 0 !important; }
+  .hero-stats-label { grid-column: 1 / -1 !important; margin-bottom: 8px !important; }
+  .hero-stats-live  { grid-column: 1 / -1 !important; margin-top: 12px !important; }
+  .hero-stat-item   { padding: 12px 8px !important; }
+  .hero-stat-item:nth-child(2), .hero-stat-item:nth-child(4) { border-right: 1px solid var(--rule) !important; }
+
+  /* Homepage: Recent cases section */
+  .home-cases-grid { grid-template-columns: 1fr !important; padding: 16px 20px 32px !important; }
+  .home-cases-grid > * { border-right: none !important; border-bottom: 1px solid var(--rule) !important; padding-right: 0 !important; }
+  .home-cases-grid p, .home-cases-grid div[style*="1.6"] { font-size: 15px !important; }
+
+  /* Homepage: Map section — hide SVG map, show text list only */
+  .map-grid { grid-template-columns: 1fr !important; }
+  .map-svg-container { display: none !important; }
+  .map-legend        { display: none !important; }
+  .map-grid > *:first-child { padding: 24px 20px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+  .map-grid > *:last-child { padding: 20px 20px 28px !important; }
+
+  /* Homepage: Featured case section */
+  .featured-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .featured-left { border-right: none !important; padding: 24px 0 !important; border-bottom: 1px solid var(--rule) !important; }
+  .featured-right { padding: 24px 0 0 !important; }
+  .featured-left p { font-size: 15px !important; line-height: 1.75 !important; }
+  .featured-right > div > div { padding: 20px 0 !important; }
+
+  /* Homepage: Areas of concern — collapse to 2-column grid */
+  .concerns-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 16px 20px 32px !important; }
+  .concerns-grid > *:nth-child(even) { border-right: none !important; }
+  .concerns-grid > div > div { font-size: 11px !important; }
+
+  /* Homepage: Manifesto section */
+  .manifesto-section { padding: 40px 20px !important; }
+  .manifesto-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .manifesto-quote { font-size: 22px !important; line-height: 1.4 !important; }
+  .manifesto-ctas { flex-direction: column !important; gap: 10px !important; }
+  .manifesto-ctas a { display: flex !important; align-items: center !important; justify-content: center !important; min-height: 48px !important; text-align: center !important; box-sizing: border-box !important; }
+
+  /* Homepage: Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  .footer-copyright { padding-bottom: 80px !important; }
+
+  /* Cases page: layout adjustments for small screens */
+  .cases-main   { padding-bottom: 80px !important; }
+  .cases-filters { flex-direction: column !important; gap: 8px !important; }
+  .cases-search { flex: none !important; width: 100% !important; }
+  /* Two filter dropdowns side-by-side on mobile */
+  .filter-selects { display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; }
+  .filter-selects .select-wrapper { flex: 1 !important; }
+  .filter-selects .select-wrapper select { width: 100% !important; min-width: unset !important; box-sizing: border-box !important; }
+  .cases-filters button { width: 100% !important; min-width: unset !important; box-sizing: border-box !important; }
+  /* Case card: single-column layout, hide right metadata column */
+  .case-card { grid-template-columns: 1fr !important; padding: 16px 8px 16px 0 !important; }
+  .case-card-right { display: none !important; }
+
+  /* Case detail page: layout adjustments */
+  .detail-main { padding-bottom: 80px !important; }
+  /* Sidebar moves above content on mobile via column-reverse */
+  .detail-grid { display: flex !important; flex-direction: column-reverse !important; gap: 24px !important; }
+}
+
+/* ── Desktop (≥ 768px) ── */
+/* Hide mobile-only bottom nav; unwrap filter-selects so selects flow inline */
+@media (min-width: 768px) {
+  .bottom-nav { display: none !important; }
+  .filter-selects { display: contents; }
+}
